@@ -1,5 +1,6 @@
 import { dialog, invoke } from '@tauri-apps/api';
 import React from 'react';
+import './FilePicker.css';
 
 const FilePickerComponent: React.FC = () => {
     
@@ -15,7 +16,7 @@ const FilePickerComponent: React.FC = () => {
 
     return (
         <div>
-            <button onClick={handleFileSelection}>Choose Directory</button>
+            <button className='file-picker-btn' onClick={handleFileSelection}>Choose Directory</button>
         </div>
     )
 }

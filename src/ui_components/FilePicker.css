@@ -1,0 +1,8 @@
+.file-picker-btn {
+    padding: 6px;
+    border: none;
+    border-radius: 10px;
+    background-color: white;
+    color: green;
+    box-shadow: 5px 5px 5px black;
+}
