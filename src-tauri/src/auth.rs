@@ -18,8 +18,6 @@ pub async fn login(username: &str, password: &str) -> Result<(), String> {
 pub async fn is_logged_in() -> Result<bool, String> {
     let (username, password) = get_creds().map_err(|e| e.to_string())?;
 
-    println!("here is the verified username and password: {} | {}", username, password);
-
     verify_login(&username, &password).await.map_err(|e| e.to_string())?;
 
     Ok(true)
