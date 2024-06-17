@@ -1,0 +1,49 @@
+.container {
+    justify-content: center;
+    text-align: center;
+}
+
+.dl-tracks-container label {
+    color:rgba(0, 0, 0, 0.733);
+}
+
+.dl-tracks-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dl-tracks-container-inner {
+    width: fit-content;
+    position: relative;
+    padding: 15px;
+    border-radius: 10px;
+    border: 1px solid rgb(60, 255, 0);
+    background-color: grey;
+    box-shadow: 8px 8px 8px black;
+    gap: 10px;
+    line-height: 30px;
+}
+
+.dl-btn {
+    color: green;
+    background-color: rgb(255, 255, 255);
+    border-radius: 10px;
+    border: none;
+    opacity: 0.7;
+    padding: 4px 4px 4px 4px;
+    box-shadow: 5px 5px 5px black;
+    margin-top: 10px;
+}
+
+.dl-btn:hover {
+    opacity: 1;
+}
+
+.spotify-url-input {
+    color: green;
+    padding: 4px 4px 4px 4px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
