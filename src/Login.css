@@ -32,3 +32,22 @@
 .submit-btn {
     margin-top: 12px;
 }
+
+.notice-box {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.notice-box-inner {
+    width: fit-content;
+    background-color: #2e2e2e;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px black;
+}
+
+.notice-box-inner h3 {
+    color: red;
+}

@@ -27,35 +27,46 @@ export default function Login() {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-container-inner">
-        <form className="login-form" onSubmit={handleSubmit}>
-          <div className="username-container">
-            <label>Username</label>
-            <br />
-            <input
-              type="text"
-              placeholder="username here"
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
-            <br />
+    <div>
+      <div className="login-container">
+        <div className="login-container-inner">
+          <form className="login-form" onSubmit={handleSubmit}>
+            <div className="username-container">
+              <label>Username</label>
+              <br />
+              <input
+                type="text"
+                placeholder="username here"
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
+              <br />
+            </div>
+            <div className="password-container">
+              <label>Password</label>
+              <br />
+              <input
+                type="password"
+                placeholder="password here"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <br />
+            </div>
+            <input className="submit-btn" type="submit" />
+          </form>
+
+          <div>
+            <h4>{error}</h4>
           </div>
-          <div className="password-container">
-            <label>Password</label>
-            <br />
-            <input
-              type="password"
-              placeholder="password here"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
-            <br />
-          </div>
-          <input className="submit-btn" type="submit" />
-        </form>
-        <div>
-          <h4>{error}</h4>
+        </div>
+      </div>
+      <div className="notice-box">
+        <div className="notice-box-inner">
+          <h3>
+            Again, please make sure, that you use an account which has spotify
+            premium
+          </h3>
         </div>
       </div>
     </div>
