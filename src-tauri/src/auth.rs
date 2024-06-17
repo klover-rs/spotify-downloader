@@ -1,9 +1,5 @@
-
-
 use spotify_dl_lib::verify_login;
 use crate::db::{creds::get_creds, creds::store_creds};
-
-const DB_NAME: &str = "creds-storage.db3";
 
 #[tauri::command]
 pub async fn login(username: &str, password: &str) -> Result<(), String> {
