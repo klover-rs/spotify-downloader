@@ -3,30 +3,24 @@ import { invoke } from "@tauri-apps/api/tauri";
 import "./App.css";
 import { useNavigate } from "react-router-dom";
 import DownloadCenter from "./ui_components/download_center";
-import { listen } from "@tauri-apps/api/event";
 import FilePickerComponent from "./ui_components/FilePicker";
 
 function App() {
-
   const nav = useNavigate();
   const [error, setError] = useState("");
 
   useEffect(() => {
-
     const checkCreds = async () => {
       try {
         await invoke("is_logged_in");
-
       } catch (e) {
         console.error(e);
         nav("/login", { replace: true });
       }
-    }
+    };
 
     checkCreds();
-
-
-  }, [])
+  }, []);
 
   const [spotifyUrl, setSpotifyUrl] = useState("");
   const [disableBtn, setDisableBtn] = useState(false);
@@ -34,7 +28,7 @@ function App() {
   const downloadTrack = async () => {
     try {
       let result = await invoke("download_tracks", {
-        url: spotifyUrl
+        url: spotifyUrl,
       });
       console.log(result);
       console.log("finished download!");
@@ -43,7 +37,7 @@ function App() {
       console.error(e);
       setError(String(e));
     }
-  }
+  };
 
   return (
     <div className="container">
@@ -51,24 +45,29 @@ function App() {
       <div className="dl-tracks-container">
         <div className="dl-tracks-container-inner">
           <FilePickerComponent />
-          <br/>
+          <br />
           <label>Supports: Tracks, Playlists, Albums</label>
-          <br/>
+          <br />
           <input
             className="spotify-url-input"
-            type='text'
-            placeholder="spotify share url here" 
+            type="text"
+            placeholder="spotify share url here"
             value={spotifyUrl}
             onChange={(e) => setSpotifyUrl(e.target.value)}
           />
-          <br/>
-          <button className="dl-btn" onClick={() => {
-          downloadTrack();
-          setDisableBtn(prevValue => !prevValue);
-          }} disabled={disableBtn}>download track(s)</button>
+          <br />
+          <button
+            className="dl-btn"
+            onClick={() => {
+              downloadTrack();
+              setDisableBtn((prevValue) => !prevValue);
+            }}
+            disabled={disableBtn}
+          >
+            download track(s)
+          </button>
           <h4>{error}</h4>
         </div>
-
       </div>
       <div>
         <DownloadCenter />
